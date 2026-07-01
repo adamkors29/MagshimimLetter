@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
+$backgroundColor: #F0F4F8;
+$secondaryBackgroundColor: #D9E2EC;
+$textColor: #102A43;
+$borderColor: #BCCCDC;
+
+%displayFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-align: right;
+    direction: rtl;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: $textColor;
+    list-style: none;
+    user-select: none;
+}
+
+#container {
+    @extend %displayFlex;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 20px 0;
+    background-color: $backgroundColor;
+
+    #main {
+        @extend %displayFlex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 500px;
+        background-color: black;
+        aspect-ratio: 5 / 3;
+        box-sizing: border-box;
+        background-color: $secondaryBackgroundColor;
+        padding: 50px 0;
+        border: 3px solid $borderColor;
+        border-radius: 10px;
+
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 46px;
+        }
+
+        input {
+            max-width: 200px;
+            padding: 10px 15px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        &.logged {
+            width: 1200px;
+            aspect-ratio: unset;
+            padding: 20px;
+            white-space: pre-wrap;
+
+            @media (max-width: 1250px) {
+                width: 96%;
+            }
+
+            @media (max-width: 850px) {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            width: 90.9%;
+        }
+
+        @media (max-width: 350px) {
+            aspect-ratio: 5 / 3.2;
+        }
+
+        @media (max-width: 530px) and (min-width: 480px) {
+            padding: 40px 0;
+        }
+
+        @media (max-width: 480px) and (min-width: 400px) {
+            padding: 30px 0;
+        }
+
+        @media (max-width: 400px) and (min-width: 0) {
+            padding: 20px 0;
+        }
+    }
+}
