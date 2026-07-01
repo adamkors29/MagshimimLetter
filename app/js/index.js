@@ -5,7 +5,7 @@ $("#main input").on("input", function () {
         if (hash === daniel_hashed_name) {
             $("#main").slideUp(600)
             setTimeout(() => {
-                fetch("./daniel.txt")
+                fetch("./17203.txt")
                     .then(response => response.text())
                     .then(text => {
                         $("#main").text(text)
